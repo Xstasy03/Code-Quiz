@@ -1,7 +1,7 @@
 # Code Quiz
 
 ## Purpose
-A quiz for people to take so that they may display a their highscore 
+A timed quiz for people to take so that they may display a their highscore amoung others.
 
 ## Live URL
 
