@@ -1,7 +1,7 @@
 # Code Quiz
 
 ## Purpose
-A timed quiz for people to take so that they may display a their highscore amoung others.
+A timed quiz that tests your knowledge about coding. There are 5 questions total with 60 seconds on the clock. Get one question wrong and you are penalized with a deduction of 10 seconds. When the clock runs out of time the test is over. People may display their highscores after the quiz.
 
 ## Live URL
 https://xstasy03.github.io/Code-Quiz/
