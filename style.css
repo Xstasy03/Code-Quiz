@@ -41,3 +41,7 @@ body {
 .hide {
     display: none;
 }
+
+.question {
+background-color: blueviolet;
+}
