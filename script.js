@@ -1,6 +1,6 @@
 const startButton = document.getElementById('start-button')
 const questionContainerElement = document.getElementById
-('question-container')
+    ('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
@@ -11,27 +11,38 @@ startButton.addEventListener('click', startGame)
 function startGame() {
     console.log('Started')
     startButton.classList.add('hide')
-    shuffeledQuestions = questions.sort(() => Math.random() - .5 )
+    shuffeledQuestions = questions.sort(() => Math.random() - .5)
     questionContainerElement.classList.remove('hide')
     currentQuestionIndex = 0
     setNextQuestion()
 }
 
 function setNextQuestion() {
-showQuestion(shuffeledQuestions[currentQuestionIndex])
+    resetState()
+    showQuestion(shuffeledQuestions[currentQuestionIndex])
 }
 
-function showQuestion(question){
-questionElement.innerText = question.question
-question.answers.forEach(answer => {
-    const button = document.createElement('button')
-    button.innerText = answer.text
-    button.classList.add('button')
-    if (answer.correct) {
-        button.dataset.correct = answer.correct
-    }
-})
+function showQuestion(question) {
+    questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('button')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerButtonsElement.appendChild(button)
+    })
 }
+
+function resetState() {
+    nextButton.classList.add('hide')
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+    }
+}
+
 
 function selectAnswer() {
 
