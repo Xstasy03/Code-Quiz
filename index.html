@@ -2,29 +2,88 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <script defer src="script.js"></script>
-    <title>Code Quiz</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Quiz Challenge : JavaScript fundamentals</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div class="container">
-        <div id="question-container" class="hide">
-            <div id="question">Question</div>
-            <div id="answer-buttons" class="button-grid">
-                <button class="button">answer 1</button>
-                <button class="button">answer 2</button>
-                <button class="button">answer 3</button>
-                <button class="button">answer 4</button>
+    <header id="header">
+        <div id="view-high-scores">
+            <a href="#" id="btn-high-scores">View high scores</a>
+            <div id="timer">
+                <span>Time: <b id="timerNumber">0</b></span>
             </div>
         </div>
-        <div class="controls">
-            <button id="start-button" class="start-button button">Start</button>
+    </header>
+
+    <main id="home-content" class="main-content">
+
+        <h2 id="title-section" class="questions-title-section">Coding Quiz</h2>
+
+        <div id="home-text-section">
+            <p class="home-text text">
+                Try to answer the following code-related questions within the time limit. </br>
+                Keep in mind that incorrect answers will penalize your score/time </br>
+                by ten seconds!
+            </p>  
         </div>
+
+        <button id="btn-start-quiz">Start Quiz</button>
+
+    </main>
+
+    <section id="quiz-content" class="main-content hide">
+
+        <div id="questionsAnswers">
+            <h2 id="question" class="questions-title-section">Question</h2>
+            <div id="answersId" class="answersList">
+                <button id="a" class="abcd" onclick="rightWrong('a')">a</button>
+                <button id="b" class="abcd" onclick="rightWrong('b')">b</button>
+                <button id="c" class="abcd" onclick="rightWrong('c')">c</button>
+                <button id="d" class="abcd" onclick="rightWrong('d')">d</button>
+            <div>
+        </div>
+
+        <div id="progress" class="correctWrong hide">
+            <p id="correct" class="hide">Correct!</p>
+            <p id="wrong" class="hide">Wrong!</p>
+        </div>
+      
+    </section>
+
+    <div id="end-quiz" class="hide">
+        <h1>All done!</h1>
+        <p id="finalScore"></p>
+        <div class="end-quiz-input">
+            <p class="end-quiz-p">
+                Enter initials:
+                <input type="text" placeholder="Enter your initials" name="initials" id="initials" />
+                <button id="submitScore" class="btn-submit">Submit</button>
+                <button id="replay" class="btn-replay">Replay quiz here!</button>
+            </p>
+        </div>
+    </div>    
+
+    <div id="high-scores-page" class="main-content hide">
+
+        <h1>High scores</h1>
+
+        <ol id="highscore-initials">
+        </ol>
+
+        <div id="highscore-score"></div>
+
+        <div id="end-buttons">
+            <button type="button" id="btn-go-back" onclick="">Go back</button>
+            <button type="button" id="btn-clear-high-scores" onclick="">Clear high scores</button> 
+        </div>
+
     </div>
+
+<script src="script.js"></script>
 </body>
 
 </html>
